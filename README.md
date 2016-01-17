@@ -22,7 +22,6 @@
 ###### 建立单例对象
  * 单例的实现
 <pre> +(instancetype)shareManager{
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
@@ -66,11 +65,9 @@
 
 ```
 @synthesize managedObjectContext = _managedObjectContext;
-
 ``` 
 
 *  将 persistentStoreCoordinator 和 managedObjectModel 中的关键代码顺序复制到 managedObjectContext 的 getter 方法中
-
 
 ```
 - (NSManagedObjectContext *)managedObjectContext {
@@ -109,7 +106,6 @@
 ![](http://c.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=40d998200e24ab18e416e53605caddbc/e850352ac65c103841fcb3c4b5119313b07e8931.jpg)
 
 * 复制并修改 saveContext 方法
-
 ```
 - (BOOL)saveContext{
     
