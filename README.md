@@ -20,7 +20,8 @@
 ##### 新建 coreData工具类
 ###### 建立单例对象
  * 单例的实现
-<pre> +(instancetype)shareManager{
+<pre> 
++(instancetype)shareManager{
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -46,7 +47,8 @@
         [self managedObjectContext];
     }
     return self;
-} </pre>
+} 
+</pre>
 
 - 单例方法中什么时候需要实现 allocWithZone: 方法？
    + 如果单例对象提供的方法，允许用户进行私人定制，则无需实现 allocWithZone:，例如：NSURLSession
@@ -56,22 +58,21 @@
 * 新建 Model.xcdatamodeld，注意文件名可以随便写，并且建立 Person 实体
 * 从 AppDelegate 复制 managedObjectContext
 
- ``` 
+<pre>
  // 创建一个只读上下文本属性
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-```
+</pre>
 * 利用 @synthesize 指定成员变量
 
-```
+<pre>
 @synthesize managedObjectContext = _managedObjectContext;
 
-``` 
+</pre>
 
 *  将 persistentStoreCoordinator 和 managedObjectModel 中的关键代码顺序复制到 managedObjectContext 的 getter 方法中
 
 
-```
+<pre>
 - (NSManagedObjectContext *)managedObjectContext {
 
     // 返回已经绑定到`持久化存储调度器`的管理对象上下文
@@ -101,15 +102,13 @@
 
     return _managedObjectContext;
 }
-
-```
+</pre>
 
 #### 思维导图如下：
 ![](http://c.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=40d998200e24ab18e416e53605caddbc/e850352ac65c103841fcb3c4b5119313b07e8931.jpg)
 
 * 复制并修改 saveContext 方法
-
-```
+<pre>
 - (BOOL)saveContext{
     
     // 判断上下文是否为 nil
@@ -126,7 +125,6 @@
     return YES;
 }
 
-
-```
+</pre>
  
 
