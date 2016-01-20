@@ -18,6 +18,7 @@
 		AE7F848F1C476A5D00B31029 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7F848C1C476A5D00B31029 /* Person+CoreDataProperties.m */; };
 		AE7F84901C476A5D00B31029 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7F848E1C476A5D00B31029 /* Person.m */; };
 		AE7F84931C476D2F00B31029 /* MKMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7F84921C476D2F00B31029 /* MKMainTableViewController.m */; };
+		AEEC62881C4FE1F300955DDD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEEC62861C4FE1F300955DDD /* Model.xcdatamodeld */; };
 		AEF208841C47ED2800E71881 /* MKDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF208831C47ED2800E71881 /* MKDestinationViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		AE7F848E1C476A5D00B31029 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		AE7F84911C476D2F00B31029 /* MKMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMainTableViewController.h; sourceTree = "<group>"; };
 		AE7F84921C476D2F00B31029 /* MKMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMainTableViewController.m; sourceTree = "<group>"; };
+		AEEC62871C4FE1F300955DDD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AEF208821C47ED2800E71881 /* MKDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDestinationViewController.h; sourceTree = "<group>"; };
 		AEF208831C47ED2800E71881 /* MKDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKDestinationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				AE7F847E1C47663800B31029 /* MKCoreDataManager.h */,
 				AE7F847F1C47663800B31029 /* MKCoreDataManager.m */,
 				AE7F84541C4765FC00B31029 /* Main.storyboard */,
+				AEEC62861C4FE1F300955DDD /* Model.xcdatamodeld */,
 				AE7F84571C4765FC00B31029 /* Assets.xcassets */,
 				AE7F84591C4765FC00B31029 /* LaunchScreen.storyboard */,
 				AE7F845C1C4765FC00B31029 /* Info.plist */,
@@ -304,6 +307,7 @@
 				AE7F84801C47663800B31029 /* MKCoreDataManager.m in Sources */,
 				AEF208841C47ED2800E71881 /* MKDestinationViewController.m in Sources */,
 				AE7F84901C476A5D00B31029 /* Person.m in Sources */,
+				AEEC62881C4FE1F300955DDD /* Model.xcdatamodeld in Sources */,
 				AE7F84501C4765FC00B31029 /* AppDelegate.m in Sources */,
 				AE7F848F1C476A5D00B31029 /* Person+CoreDataProperties.m in Sources */,
 				AE7F844D1C4765FC00B31029 /* main.m in Sources */,
@@ -554,6 +558,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AEEC62861C4FE1F300955DDD /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AEEC62871C4FE1F300955DDD /* Model.xcdatamodel */,
+			);
+			currentVersion = AEEC62871C4FE1F300955DDD /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AE7F84401C4765FC00B31029 /* Project object */;
 }

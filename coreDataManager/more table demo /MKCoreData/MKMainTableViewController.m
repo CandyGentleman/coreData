@@ -103,6 +103,7 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
    
     [self.tableView reloadData];
+    
     NSLog(@"%lu",self.fetchedResultsController.sections.count);
 }
 

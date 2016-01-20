@@ -98,19 +98,27 @@
     Person *person1;
     
     if (self.person == nil) {
-          person1 = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[MKCoreDataManager shareManager].managedObjectContext];
+        if (self.nameText.text.length > 0 && self.titleText.text.length > 0) {
+            
+            person1 = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[MKCoreDataManager shareManager].managedObjectContext];
+        }else{
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }else{
         person1 = self.person;
     }
     
     person1.name = self.nameText.text;
+    
     if (self.selectedTitle == nil) {
         
+         if (self.nameText.text.length > 0 && self.titleText.text.length > 0) {
         Title *title = [NSEntityDescription insertNewObjectForEntityForName:@"Title" inManagedObjectContext:[MKCoreDataManager shareManager].managedObjectContext];
         
         title.tilteName = self.titleText.text;
         
         person1.title = title;
+         }
         
     }else{
         
@@ -121,10 +129,11 @@
     person1.birthday = [self.dateFormatter dateFromString:self.brithdayText.text];
     person1.desc = self.dectText.text;
     
-    if (self.nameText.text.length  > 0 && self.titleText.text.length > 0) {
         //将数据保存到数据库中
+//    if (self.nameText.text.length > 0 && self.titleText.text.length > 0) {
+
         [[MKCoreDataManager shareManager] saveContext];
-    }
+
     // 退出当前的页面
     [self.navigationController popViewControllerAnimated:YES];
 }

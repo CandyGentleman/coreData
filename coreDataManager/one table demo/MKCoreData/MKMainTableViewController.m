@@ -60,9 +60,9 @@
     [super viewDidLoad];
     
        // 插入数据
-//    [self createDemoData];
+    [self createDemoData];
     
-    [self.fetchedResultsController performFetch:nil];
+//    [self.fetchedResultsController performFetch:nil];
     
 }
 
@@ -127,7 +127,7 @@
     }
     
     // 保存数据
-    [[MKCoreDataManager shareManager] saveContext];
+//    [[MKCoreDataManager shareManager] saveContext];
     
     NSLog(@"OK!");
 }

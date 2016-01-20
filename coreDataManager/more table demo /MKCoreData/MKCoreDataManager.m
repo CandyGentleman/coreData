@@ -101,16 +101,24 @@ static NSString *const dbName = @"sqlData.db";
 - (BOOL)saveContext{
     
     // 判断上下文是否为 nil
-    if (self.managedObjectContext == nil) {
+    if (self.managedObjectContext == nil || self.backgroundMoc == nil) {
         NSLog(@"上下文为nil，无法进行数据操作");
         return NO;
     }
+    
+   
+    if (!self.managedObjectContext.hasChanges && !self.backgroundMoc.hasChanges){
+        return YES;
+    }
+    
     NSError *error = nil;
-    if (self.managedObjectContext.hasChanges && ![self.managedObjectContext save:&error]) {
+    if (![self.managedObjectContext save:&error]) {
         NSLog(@"没有需要保存的数据");
         return NO;
     }
+    
     [self.backgroundMoc save:NULL];
+    
     return YES;
 }
 

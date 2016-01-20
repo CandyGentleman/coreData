@@ -94,8 +94,13 @@ static NSString *const dbName = @"sqlData.db";
         NSLog(@"上下文为nil，无法进行数据操作");
         return NO;
     }
+    
+    if (!self.managedObjectContext.hasChanges){
+        return YES;
+    }
+        
     NSError *error = nil;
-    if (self.managedObjectContext.hasChanges && ![self.managedObjectContext save:&error]) {
+     if(![self.managedObjectContext save:&error]) {
         NSLog(@"没有需要保存的数据");
         return NO;
     }
